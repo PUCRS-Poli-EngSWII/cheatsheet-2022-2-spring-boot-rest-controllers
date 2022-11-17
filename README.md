@@ -1,19 +1,19 @@
 # Grupo 1
 
 ## Spring Boot
-## O que é
-## Como Funciona Internamente
+## O que é ()
+## Como Funciona Internamente ()
 ## Controller Rest
-### O que é 
-### Anotações e Parâmetros das Anotações
-### Exemplos
-### Construtores, Acessores e Modificadores Necessários
-### Mapeamento de Verbos
-### Exemplos
-### Como Receber Dados da Chamada
-### Como Retornar Dados e Status
-### Classes e Métodos Adicionais
-### Exemplos
+### O que é (A)
+### Anotações e Parâmetros das Anotações (A)
+### Exemplos (A)
+### Construtores, Acessores e Modificadores Necessários (D)
+### Mapeamento de Verbos (D)
+### Exemplos (D)
+### Como Receber Dados da Chamada (Manu)
+### Como Retornar Dados e Status (Manu)
+### Classes e Métodos Adicionais ()
+### Exemplos ()
 ----------------------------------
 # Grupo 2
 
