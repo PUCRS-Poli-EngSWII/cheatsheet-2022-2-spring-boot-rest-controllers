@@ -52,7 +52,7 @@ O módulo Test possui o suporte para os testes unitários utilizando JUnit e tes
  
  <p align="center">Figura 1: Projeto Spring Framework destacando o módulo Core Container</p>
 </p>
-<br>
+
 
 #### Arquitetura	do	Spring	Boot
 O Spring Boot veio como uma extensão do Spring, que utiliza da base do Spring Framework para iniciar uma aplicação de uma forma bem mais simplificada, diminuindo a complexidade de configurações iniciais e o tempo para executar uma aplicação e deixá-la pronta para implementação das regras de negócio. Também já traz um servidor embutido que facilita ainda mais esse processo de start da aplicação.
@@ -64,7 +64,7 @@ A	arquitetura	do	Spring	Boot	é	formada	pelos	componentes:
 - Autoconfigure - configura automaticamente os componentes carregados;
 - Tools - é uma IDE customizada para o desenvolvimento com Spring Boot;
 - Samples - dezenas de implementações de exemplos disponíveis para uso.
-
+<br>
 <p align="center">
   <img src="https://miro.medium.com/max/720/1*dF65v509nh4WnboF_BQ-JQ.png" width="400px" height="297px" alt="Arquitetura do pring Boot">
   <img src="https://se.ewi.tudelft.nl/desosa2019/chapters/spring-boot/images/spring-boot/module_structure.PNG" width="400px" alt="Arquitetura do pring Boot">
