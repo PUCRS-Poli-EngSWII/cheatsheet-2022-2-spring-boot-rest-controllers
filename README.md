@@ -54,6 +54,35 @@ O módulo Test possui o suporte para os testes unitários utilizando JUnit e tes
 </p>
 <br>
 
+#### Arquitetura	do	Spring	Boot
+O Spring Boot veio como uma extensão do Spring, que utiliza da base do Spring Framework para iniciar uma aplicação de uma forma bem mais simplificada, diminuindo a complexidade de configurações iniciais e o tempo para executar uma aplicação e deixá-la pronta para implementação das regras de negócio. Também já traz um servidor embutido que facilita ainda mais esse processo de start da aplicação.
+
+A	arquitetura	do	Spring	Boot	é	formada	pelos	componentes:
+
+- CLI - o	Spring	Boot CLI é uma ferramenta de linha de  comando que facilita a criação de protótipos através de scripts em Groovy;
+- Starters - é um conjunto de componentes de dependências que podem ser adicionados aos nossos sistemas;
+- Autoconfigure - configura automaticamente os componentes carregados;
+- Tools - é uma IDE customizada para o desenvolvimento com Spring Boot
+- Samples - dezenas de implementações de exemplos disponíveis para uso.
+
+<br>
+<p align="center">
+  <img src="https://miro.medium.com/max/720/1*dF65v509nh4WnboF_BQ-JQ.png" width="400px" height="297px" alt="Arquitetura do pring Boot">
+  <img src="https://se.ewi.tudelft.nl/desosa2019/chapters/spring-boot/images/spring-boot/module_structure.PNG" width="400px" alt="Arquitetura do pring Boot">
+ 
+ <p align="center">Figura 2: Arquitetura do pring Boot</p>
+</p>
+<br>
+
+Resumindo, o Spring Boot é a soma do Spring Framework com um servidor embutido menos as configurações XML e classes de configurações.
+<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/81579248/204319631-155eead8-d098-4dbd-b3c4-b35cb93a8537.png" width="600px" alt="Resumo Spring Boot">
+ 
+ <p align="center">Figura 3: Resumo Spring Boot</p>
+</p>
+<br>
+
 Embora o Spring forneça integração e suporte para uma grande variedade de ferramentas corporativas e externas, ele intencionalmente mantém suas dependências obrigatórias em um mínimo absoluto. O ato de conectar beans juntos é baseado em um padrão conhecido como injeção de dependência (DI). Em vez de os componentes criarem e manterem o ciclo de vida de outros beans dos quais dependem, um aplicativo com injeção de dependência depende de uma entidade separada (o contêiner) para criar e manter todos os componentes e injetá-los nos beans que precisam deles. Isso é feito normalmente por meio de argumentos de construtor ou métodos de acesso de propriedade.
 
 Como o projeto Spring Framework possui o módulo Core Container, onde está implementado a Inversão de Controle que utiliza da Injeção de Dependência, ele se torna o projeto essencial para iniciar uma aplicação sendo assim a base de toda a plataforma Spring.
