@@ -62,7 +62,7 @@ A	arquitetura	do	Spring	Boot	é	formada	pelos	componentes:
 - CLI - o	Spring	Boot CLI é uma ferramenta de linha de  comando que facilita a criação de protótipos através de scripts em Groovy;
 - Starters - é um conjunto de componentes de dependências que podem ser adicionados aos nossos sistemas;
 - Autoconfigure - configura automaticamente os componentes carregados;
-- Tools - é uma IDE customizada para o desenvolvimento com Spring Boot
+- Tools - é uma IDE customizada para o desenvolvimento com Spring Boot;
 - Samples - dezenas de implementações de exemplos disponíveis para uso.
 
 <br>
