@@ -71,7 +71,7 @@ A	arquitetura	do	Spring	Boot	é	formada	pelos	componentes:
  
  <p align="center">Figura 2: Arquitetura do pring Boot</p>
 </p>
-<br>
+
 
 Resumindo, o Spring Boot é a soma do Spring Framework com um servidor embutido menos as configurações XML e classes de configurações.
 <br>
@@ -80,7 +80,7 @@ Resumindo, o Spring Boot é a soma do Spring Framework com um servidor embutido 
  
  <p align="center">Figura 3: Resumo Spring Boot</p>
 </p>
-<br>
+
 
 Embora o Spring forneça integração e suporte para uma grande variedade de ferramentas corporativas e externas, ele intencionalmente mantém suas dependências obrigatórias em um mínimo absoluto. O ato de conectar beans juntos é baseado em um padrão conhecido como injeção de dependência (DI). Em vez de os componentes criarem e manterem o ciclo de vida de outros beans dos quais dependem, um aplicativo com injeção de dependência depende de uma entidade separada (o contêiner) para criar e manter todos os componentes e injetá-los nos beans que precisam deles. Isso é feito normalmente por meio de argumentos de construtor ou métodos de acesso de propriedade.
 
