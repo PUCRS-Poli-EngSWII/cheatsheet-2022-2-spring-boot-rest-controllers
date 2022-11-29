@@ -1,7 +1,7 @@
 # Grupo 1
 
 ## Spring Boot
-## O que é (Mat)
+## O que é
 O Spring Boot é um framework Java open source que fornece suporte abrangente de infraestrutura para o desenvolvimento de aplicativos Java. Tem como objetivo facilitar esse processo em aplicações Java. Consequentemente, ele traz mais agilidade para o processo de desenvolvimento, uma vez que devs conseguem reduzir o tempo gasto com as configurações iniciais.
 Em sua essência, o Spring lida com a infraestrutura para que você possa se concentrar em seu aplicativo oferecendo um contêiner, geralmente chamado de contexto do aplicativo Spring, que cria e gerencia os componentes do aplicativo. Esses componentes, ou beans, são conectados dentro do contexto do aplicativo Spring para fazer um aplicativo completo  a nível de produção.
 
@@ -15,7 +15,7 @@ Em sua essência, o Spring lida com a infraestrutura para que você possa se con
 
 Portanto, o Spring Boot é uma maneira eficiente e eficaz de criar  uma aplicação em Spring e facilmente colocá-la no ar, funcionando sem depender de um servidor de aplicação.
 
-## Como Funciona Internamente (Mat)
+## Como Funciona Internamente
 O Spring possui uma arquitetura baseada em interfaces e POJOs (Plain Old Java Objects), oferecendo aos POJOs características como mecanismos de segurança e controle de transações. Esse recurso se aplica ao modelo de programação Java SE e ao Java EE total e parcial. Também facilita testes unitários e surge como uma alternativa à complexidade existente no uso de EJBs. Ademais, Spring codifica padrões de design formalizados como objetos de primeira classe que podemos integrar em nossos próprios aplicativos.
 
 O Spring Framework consiste em recursos organizados em cerca de 21 módulos. Esses módulos são agrupados em 7 grupos: 
@@ -178,13 +178,13 @@ Register system user, with your email, name and password;
 
 *POST:* Por exemplo, um administrador emite uma solicitação POST para um recurso de /students que cria um estudante com um username, docNumber e address.
 
-<img width="400px" src="./img/CreateUser.png">
+<img width="400px" src="./img/CreateStudent.png">
 
 *PUT:* No exemplo abaixo, temos um sistema de funcionarios e o PUT irá atualizar os dados da Janette.
 
 <img width="400px" src="./img/getAllEmployees.jpg">
 
-<img width="400px" src="./img/gput.jpg">
+<img width="400px" src="./img/put.jpg">
 
 *GET:* Pode user utilizado para pegar um registro especifico ou dentro de algum filtro, nas imagens abaixo estão exemplos para receber os dados de todos os estudantes, para receber os dados de todos que conten X no nome e para receber apenas o que tem exatamente aquele número de matrícula;
 
