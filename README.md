@@ -156,8 +156,54 @@ class EmployeeNotFoundAdvice {
 ```
 ---
 ### Construtores, Acessores e Modificadores Necessários (Zé)
-### Mapeamento de Verbos (D)
-### Exemplos (D)
+### Mapeamento de Verbos
+
+Os quatro verbos mais comuns são GET, PUT, DELETE e POST.
+
+O método HTTP GET busca um registro ou conjunto de recursos do servidor sem alterar nenhum recurso. É seguro e idempotente. 
+
+O método HTTP PUT atualiza ou substitui o registro fornecido ou para criar uma nova entidade em uma URL conhecida. O método PUT HTTP é idempotente então várias solicitações de PUT idênticas com a mesma entidade para a mesma URL gera o mesmo resultado como se apenas uma solicitação PUT fosse emitida.
+
+O método HTTP DELETE remove um recurso em uma URL específica.
+
+O método HTTP POST é usado para enviar uma entidade para o recurso especificado, geralmente causando uma mudança no estado ou no servidor. 
+
+O método HTTP OPTIONS busca todas as operações REST disponíveis.
+
+O método PATCH é semelhante ao PUT, exceto que não substituirá o registro inteiro. PATCH, corrige a coluna que está sendo modificada[(Packt)](https://subscription.packtpub.com/book/web-development/9781788294287/1/ch01lvl1sec9/rest-verbs-and-status-codes).
+
+### Exemplos
+
+Register system user, with your email, name and password;
+
+*POST:* Por exemplo, um administrador emite uma solicitação POST para um recurso de /students que cria um estudante com um username, docNumber e address.
+
+<img width="400px" src="./img/CreateUser.png">
+
+*PUT:* No exemplo abaixo, temos um sistema de funcionarios e o PUT irá atualizar os dados da Janette.
+
+<img width="400px" src="./img/getAllEmployees.jpg">
+
+<img width="400px" src="./img/gput.jpg">
+
+*GET:* Pode user utilizado para pegar um registro especifico ou dentro de algum filtro, nas imagens abaixo estão exemplos para receber os dados de todos os estudantes, para receber os dados de todos que conten X no nome e para receber apenas o que tem exatamente aquele número de matrícula;
+
+<img width="400px" src="./img/getallStudents.png">
+
+<img width="400px" src="./img/getStudentByName.png">
+
+<img width="400px" src="./img/getStudentByMatricula.png">
+
+*DELETE:* No exemplo abaixo será deletado os dados do funcionário Garret Winters de ID 2.
+
+<img width="400px" src="https://www.tutorialspoint.com/assets/questions/media/59598/54.jpg">
+
+<img width="400px" src="https://www.tutorialspoint.com/assets/questions/media/59598/54.4.jpg">
+
+e caso o delete falhe:
+
+<img width="400px" src="https://www.tutorialspoint.com/assets/questions/media/59598/54.5.jpg">
+
 ---
 ### Como Receber Dados da Chamada (Manu)
 ### Como Retornar Dados e Status (Manu)
