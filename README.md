@@ -174,8 +174,6 @@ O método PATCH é semelhante ao PUT, exceto que não substituirá o registro in
 
 ### Exemplos
 
-Register system user, with your email, name and password;
-
 *POST:* Por exemplo, um administrador emite uma solicitação POST para um recurso de /students que cria um estudante com um username, docNumber e address.
 
 <img width="400px" src="./img/CreateStudent.png">
