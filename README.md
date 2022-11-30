@@ -205,8 +205,115 @@ e caso o delete falhe:
 ---
 ### Como Receber Dados da Chamada (Manu)
 ### Como Retornar Dados e Status (Manu)
-### Classes e Métodos Adicionais (Zé)
-### Exemplos (Cassiano)
+### Classes e Métodos Adicionais
+
+O protocolo HTTP funciona a partir de clientes que enviam solicitações aos servidores e esses, por sua vez, respondem às solicitações. Fazemos operações CRUD (Create, Read, Update, Delete) enviando solicitações HTTP com diferentes métodos, às vezes chamados de verbos HTTP. GET e POST são os métodos HTTP usados ​​com mais frequência, como explicado anteriormente, mas existem diversos outros métodos HTTP interessantes.
+
+### Classe de métodos do tipo HTTP seguro
+
+Um método seguro é um método que não altera dados no servidor. Por exemplo, **GET**, **OPTIONS** e **HEAD** são métodos seguros, uma vez que o usuário, ou um aplicativo, não causam efeitos colaterais no servidor ao chamá-los. Todos os métodos seguros também são idempotentes, mas nem todos os métodos idempotentes são seguros.
+
+ - **HEAD**: O método HEAD é idêntico ao GET, exceto que o servidor ***NÃO DEVE*** retornar um "corpo de mensagem" na resposta. As metainformações contidas nos cabeçalhos HTTP em resposta a uma solicitação HEAD ***DEVEM*** ser idênticas às informações enviadas em resposta a uma solicitação GET.
+
+### Exemplo de uma chamada GET
+
+    GET http://api.twitter.com/1/users/show.json?screen_name=jasonh-n-austin
+
+A resposta vinda do servidor:
+
+    200 OK
+    
+    {
+    "id": 57005215,
+    "id_str": "57005215",
+    "name": "Jason Harmon",
+    "screen_name": "jasonh_n_austin",
+    "location": "Austin, TX",
+    "url": "http://pragmaticapi.com",
+    <snip>
+
+### Exemplo de uma chamada HEAD
+
+    HEAD http://api.twitter.com/1/users/show.json?screen_name=jasonh-n-austin
+
+A resposta vinda do servidor:
+
+    200 OK
+
+Caso dê algum erro:
+
+    404 OK
+
+Apenas isso, não há qualquer informação além do próprio retorno.
+
+
+### Classe de métodos do tipo idempotente
+
+Um método idempotente significa que não importa quantas vezes ele seja executado, ele sempre irá retornar a mesma resposta. Por exemplo, os métodos **PUT**, **DELETE** e **TRACE** compartilham essa propriedade. Porém, é possível que uma sequência de várias requisições não seja idempotente mesmo que todos os métodos executados nessa sequência sejam idempotentes. Assim, uma série de requisições é idempotente se uma única execução de toda a série sempre retornar o mesmo resultado.
+
+ - **TRACE:** O método HTTP TRACE é normalmente usado para retornar a solicitação HTTP completa ao cliente solicitante para fins de depuração de proxy (diagnóstico). Ele cria um teste de loopback com o mesmo corpo da solicitação que o cliente enviou ao servidor antes e o código de resposta bem-sucedido é 200 OK.
+ 
+
+> Loopback é o roteamento de sinais eletrônicos ou fluxos de dados
+> digitais de volta à sua fonte sem processamento ou modificação
+> intencional. É principalmente um meio de testar a infra-estrutura de
+> comunicações.
+
+> O método TRACE pode ser perigoso uma vez que pode revelar credenciais.
+> Um hacker pode roubar informações, incluindo cabeçalhos de
+> autenticação interna, usando um ataque pelo lado do cliente.
+
+### Exemplo de uma requisição TRACE
+
+    $ telnet 127.0.0.1 8080
+    Trying...
+    Connected to 127.0.0.1.
+    Escape character is '^]'.
+    TRACE / HTTP/1.0
+    Host: foo
+    A: b
+    C: d
+    
+    HTTP/1.1 200 OK
+    Date: Mon, 04 Oct 2004 14:07:59 GMT
+    Server: IBM_HTTP_SERVER
+    Connection: close
+    Content-Type: message/http
+    
+    TRACE / HTTP/1.0
+    A: b
+    C: d
+    Host: foo
+    
+    Connection closed.
+
+
+
+### Método CONNECT
+
+O método CONNECT é para fazer conexões ponta a ponta entre um cliente e um servidor. Inicia comunicações bidirecionais com o recurso solicitado, como um túnel entre eles. Por exemplo, podemos usar esse método para transferir com segurança um arquivo grande entre o cliente e o servidor. Também, pode ser usado para acessar sites que usam SSL ( HTTPS ).
+
+### Exemplo de sintaxe CONNECT
+
+    CONNECT server.example.com:80 HTTP/1.1
+    Host: server.example.com:80
+    Proxy-Authorization: basic aGVsbG86d29ybGQ=
+
+
+### Tabela comparativa entre os métodos e suas características
+
+| Método  | Descrição                                                     | CRUD   | Seguro | Idempotente |
+|---------|---------------------------------------------------------------|--------|--------|-------------|
+| GET     | Para buscar um único recurso ou grupo de recursos             | Read   | Sim    | Sim         |
+| PUT     | Para atualizar um recurso inteiro de uma só vez               | Update | Não    | Sim         |
+| POST    | Para criar um novo recurso                                    | Create | Não    | Não         |
+| PATCH   | Para atualizar parcialmente um recurso                        | Update | Não    | Não         |
+| DELETE  | Para excluir um recurso                                       | Delete | Não    | Sim         |
+| OPTIONS | Para obter informações sobre as operações permitidas          | Read   | Sim    | Sim         |
+| HEAD    | Para obter metadados do endpoint                              | Read   | Sim    | Sim         |
+| TRACE   | Para fins de diagnóstico                                      | Read   | Sim    | Sim         |
+| CONNECT | Para fazer a conexão bidirecional entre o cliente e o recurso | -      | Não    | Não         |
+
 ----------------------------------
 # Grupo 2
 
