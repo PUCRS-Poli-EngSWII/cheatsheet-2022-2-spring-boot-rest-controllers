@@ -88,10 +88,10 @@ Como o projeto Spring Framework possui o módulo Core Container, onde está impl
 
 
 ## Controller Rest
-### O que é (A)
+### O que é
 - Controllers REST são utilizados para a criação de aplicações web baseados no padrão REST;
 - Um controller ou controlador, é o responsável por receber requisições de fora do sistema e devolver respostas de acordo com as requisições;
-### Anotações e Parâmetros das Anotações (A)
+### Anotações e Parâmetros das Anotações
 - @RestController -> Responsável por dizer que determinada classe irá manipular requisições HTTP;
 - @RequestMapping(<partial_url>) -> Os métodos de seu controlador serão mapeados para URLs de acordo com a url parcial dentro da anotação;
     - @RequestMapping("/users/") -> indica que é responsável por atender requisições que contenham "/users/" em sua url;
