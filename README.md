@@ -258,8 +258,31 @@ e caso o delete falhe:
 <img width="400px" src="https://www.tutorialspoint.com/assets/questions/media/59598/54.5.jpg">
 
 ---
-### Como Receber Dados da Chamada (Manu)
-### Como Retornar Dados e Status (Manu)
+### Como Receber Dados da Chamada
+Ao utilizar uma controller no Spring contamos com alguns métodos como visto anteriormente, mas para o correto funcionamento da aplicação se faz necessário receber dados em algumas dessas chamadas. Para isso o Spring oferece algumas anotações como:
+@PathVariable -> É utilizada quando é necessário receber um valor pela URL da requisição.
+@RequestParam -> Apesar de muito parecido com o Path Variable, o Request Param está mais relacionado ao recebimento de dados que não compõe a url, como por exemplo: nome, email, telefone.
+@RequestBody -> Mapeia o corpo HttpRequest para um objeto de transferência ou domínio, permitindo a desserialização automática do corpo HttpRequest de entrada em um objeto Java. O Spring desserializa automaticamente o JSON em um tipo Java, supondo que um apropriado seja especificado.
+Por padrão, o tipo que anotamos com a anotação @RequestBody deve corresponder ao JSON enviado de nosso controller do lado do cliente.
+
+### Como Retornar Dados e Status
+Na parte de retorno de dados o Spring conta com o tipo Response Entity que possibilita retornar os objetos gerados em cada um dos endpoints(se houver). O tipo Response Entity conta com algumas funcionalidades como “body” que permite retornar um corpo na resposta da requisição e “status” que atrela a resposta um método HTTP. 
+Segue abaixo um exemplo da utilização do Response Entity:
+```Java
+@GetMapping("/customHeader")
+ResponseEntity<String> customHeader() {
+    return ResponseEntity.ok()
+        .header("Custom-Header", "foo")
+        .body("Custom header set");
+}
+```
+Os status HTTP suportados pelo spring são:
+Informativo (1xx): Indica que a requisição foi recebida e o processo está em andamento. Ele sinaliza para aguardar a resposta final
+Sucesso (2xx): Indica que a requisição foi recebida, compreendida e aceita com sucesso.
+Redirecionamento (3xx): Indica que mais ações devem ser tomadas para completer a requisição. 
+Erro do cliente(4xx): Indica que um erro ocorreu durante a requisição e este erro foi causado pelo cliente.
+Erro do servidor(5xx): Indica que um erro ocorreu durante a requisição e este erro foi causado pelo servidor. 
+
 ### Classes e Métodos Adicionais
 
 O protocolo HTTP funciona a partir de clientes que enviam solicitações aos servidores e esses, por sua vez, respondem às solicitações. Fazemos operações CRUD (Create, Read, Update, Delete) enviando solicitações HTTP com diferentes métodos, às vezes chamados de verbos HTTP. GET e POST são os métodos HTTP usados ​​com mais frequência, como explicado anteriormente, mas existem diversos outros métodos HTTP interessantes.
