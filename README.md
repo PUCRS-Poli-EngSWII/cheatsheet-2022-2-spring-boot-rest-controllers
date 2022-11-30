@@ -156,6 +156,61 @@ class EmployeeNotFoundAdvice {
 ```
 ---
 ### Construtores, Acessores e Modificadores Necessários (Zé)
+Os modelos de métodos construtores no spring seguem o mesmo formato do Java, porém normalmente é utilizado o conceito de injeção de dependencia.
+
+Portanto a única mudança é a atribuição de uma anotação a mais na estrutura já conhecida de construtores:
+
+#### Exemplo
+_Anotação no atributo_
+```Java
+@Controller
+public class MeuController {
+
+    @Autowired
+    private UmDao dao;
+}
+```
+_Anotação no construtor_
+```Java
+@Controller
+public class MeuController {
+
+    private UmDao dao;
+
+    @Autowired
+    public MeuController(UmDao dao) {
+        this.dao = dao;
+    }
+}
+```
+
+Acerca dos métodos acessores e modificadores, normalmente é utilizada uma depêndencia responsável por "enxutar" a nossa classe rest.
+
+Utilizando a Lombok, conseguimos através de anotações definir diversos métodos que normalmente toda classe vai possuir, como getters, setters, equals e hashcode.
+
+#### Exemplo
+
+```Java
+package com.mballem.lombok;
+
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
+@EqualsAndHashCode
+public class User {
+
+	@Getter @Setter
+	private Integer id;
+	
+	@Getter @Setter
+	private String name;
+} 
+```
+
+
 ### Mapeamento de Verbos
 
 Os quatro verbos mais comuns são GET, PUT, DELETE e POST.
