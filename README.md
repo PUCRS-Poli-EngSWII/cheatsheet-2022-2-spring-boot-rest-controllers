@@ -155,7 +155,7 @@ class EmployeeNotFoundAdvice {
 }
 ```
 ---
-### Construtores, Acessores e Modificadores Necessários (Zé)
+### Construtores, Acessores e Modificadores Necessários
 Os modelos de métodos construtores no spring seguem o mesmo formato do Java, porém normalmente é utilizado o conceito de injeção de dependencia.
 
 Portanto a única mudança é a atribuição de uma anotação a mais na estrutura já conhecida de construtores:
